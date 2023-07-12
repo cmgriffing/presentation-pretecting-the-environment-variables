@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>01-intro</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reset.css">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section><section id="protecting-the-environment-variables" class="title-slide slide level1"><h1>Protecting the Environment (variables)</h1></section><section id="who-am-i" class="slide level2">
+<h2>Who am I?</h2>
+<ul>
+<li>Senior Frontend Engineer @ Fairwinds</li>
+<li>Twitch Streamer</li>
+<li>Lazy YouTuber</li>
+</ul>
+</section><section id="wheres-the-best-place-for-a-horse-to-grow-up" class="slide level2">
+<h2>Where’s the best place for a horse to grow up?</h2>
+</section><section id="in-a-stable-environment." class="slide level2">
+<h2>In a stable environment.</h2>
+<p><img data-src="./assets/horse.gif" /></p>
+</section></section>
+<section><section id="what" class="title-slide slide level1"><h1>What</h1></section><section id="syntax-trees" class="slide level2">
+<h2>Syntax Trees</h2>
+<ul>
+<li><strong>concrete syntax trees</strong>: structures that represent every detail (such as white-space in white-space insensitive languages)</li>
+<li><strong>abstract syntax trees</strong>: structures that only represent details relating to the syntactic structure of code (such as ignoring whether a double or single quote was used in languages that support both, such as JavaScript).</li>
+</ul>
+</section><section id="example" class="slide level2">
+<h2>Example</h2>
+<p><img data-src="./assets/ast-graph.png" /></p>
+</section><section id="popular-usages-of-asts" class="slide level2">
+<h2>Popular Usages of ASTs</h2>
+<ul>
+<li>Babel</li>
+<li>Webpack</li>
+<li>Typescript</li>
+<li>ESLint</li>
+<li>TreeSitter</li>
+</ul>
+</section><section id="why-dont-environmentalists-eat-italian-food" class="slide level2">
+<h2>Why don’t environmentalists eat Italian food?</h2>
+</section><section id="because-they-are-trying-to-decrease-their-carbonara-footprint." class="slide level2">
+<h2>Because they are trying to decrease their Carbonara footprint.</h2>
+<p><img data-src="./assets/carbonara.gif" /></p>
+</section></section>
+<section><section id="why" class="title-slide slide level1"><h1>Why</h1></section><section id="use-cases" class="slide level2">
+<h2>Use Cases</h2>
+<ul>
+<li>Compiling</li>
+<li>Transpiling</li>
+<li>Code Analysis</li>
+<li>Editor Tooling</li>
+</ul>
+</section><section id="compiling" class="slide level2">
+<h2>Compiling</h2>
+<ul>
+<li>TS to JS (tsc)</li>
+<li>Compilers in general (c -&gt; asm)</li>
+</ul>
+</section><section id="transpiling" class="slide level2">
+<h2>Transpiling</h2>
+<ul>
+<li>ES6 to ES5 (babel)</li>
+</ul>
+</section><section id="code-analysis" class="slide level2">
+<h2>Code Analysis</h2>
+<ul>
+<li>ESLint</li>
+</ul>
+</section><section id="editor-tooling" class="slide level2">
+<h2>Editor Tooling</h2>
+<ul>
+<li>Syntax Highlighting</li>
+<li>Type Annotations</li>
+</ul>
+</section><section id="environmental-protection-can-be-so-simple" class="slide level2">
+<h2>Environmental protection can be so simple!</h2>
+</section><section id="for-example-i-have-deliberately-never-bought-a-jet-or-a-yacht." class="slide level2">
+<h2>For example, I have deliberately never bought a jet or a yacht.</h2>
+<p><img data-src="./assets/brain.gif" /></p>
+</section></section>
+<section><section id="how" class="title-slide slide level1"><h1>How</h1></section><section id="tools" class="slide level2">
+<h2>Tools</h2>
+<ul>
+<li>TS</li>
+<li>unist</li>
+<li>ts-morph</li>
+<li>TreeSitter</li>
+</ul>
+</section><section id="ts" class="slide level2">
+<h2>TS</h2>
+<p>Literally “typescript”</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode typescript"><code class="sourceCode typescript"><span id="cb1-1"><a href="#cb1-1"></a>handlers</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="co">// ... other transformers</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  .<span class="fu">map</span>((handlerPath) <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="co">// parse http handlers using ts</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>    <span class="kw">const</span> fileName <span class="op">=</span> <span class="va">handlerPath</span><span class="op">.</span><span class="fu">substring</span>(<span class="va">handlerPath</span><span class="op">.</span><span class="fu">lastIndexOf</span>(<span class="st">&quot;/&quot;</span>))<span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="kw">const</span> sourceText <span class="op">=</span> <span class="va">fs</span><span class="op">.</span><span class="fu">readFileSync</span>(handlerPath<span class="op">,</span> <span class="op">{</span> encoding<span class="op">:</span> <span class="st">&quot;utf8&quot;</span> <span class="op">}</span>)<span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a>    <span class="cf">return</span> <span class="va">ts</span><span class="op">.</span><span class="fu">createSourceFile</span>(fileName<span class="op">,</span> sourceText<span class="op">,</span> <span class="va">ts</span><span class="op">.</span><span class="va">ScriptTarget</span><span class="op">.</span><span class="at">Latest</span>)<span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>  <span class="op">}</span>)</span>
+<span id="cb1-10"><a href="#cb1-10"></a>  .<span class="fu">map</span>((sourceFile) <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>    <span class="co">// map parsed handlers and extract metadata from Route</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>    <span class="va">ts</span><span class="op">.</span><span class="fu">forEachChild</span>(sourceFile<span class="op">,</span> (node) <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>      <span class="fu">if</span> (<span class="va">ts</span><span class="op">.</span><span class="fu">isClassDeclaration</span>(node)) <span class="op">{</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>        <span class="kw">const</span> routeMetadata <span class="op">=</span> <span class="fu">getRouteMetadata</span>(node<span class="op">,</span> sourceFile)<span class="op">;</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a>        <span class="fu">if</span> (<span class="va">routeMetadata</span><span class="op">.</span><span class="at">length</span>) <span class="op">{</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>          <span class="va">routeOptions</span><span class="op">.</span><span class="fu">push</span>(<span class="op">...</span>routeMetadata)<span class="op">;</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a>        <span class="op">}</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>      <span class="op">}</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>    <span class="op">}</span>)<span class="op">;</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a>  <span class="op">}</span>)<span class="op">;</span></span></code></pre></div>
+</section><section id="unist" class="slide level2">
+<h2>unist</h2>
+<p>Universal Syntax Tree</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode typescript"><code class="sourceCode typescript"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">interface</span> <span class="bu">Node</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>  type<span class="op">:</span> <span class="dt">string</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>  data<span class="op">:</span> Data<span class="op">?</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>  position<span class="op">:</span> <span class="bu">Position</span><span class="op">?</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="op">}</span></span></code></pre></div>
+<aside class="notes">
+<p>lots of utilities (32 at this time)</p>
+<p>find, find-after, flatmap, visit, reduce</p>
+<p>issue with latest version needing esm support. just use older version if needed</p>
+</aside>
+</section><section id="unist-cont." class="slide level2">
+<h2>unist (cont.)</h2>
+<blockquote>
+<p>unist is not intended to be self-sufficient. Instead, it is expected that other specifications implement unist and extend it to express language specific nodes.</p>
+</blockquote>
+<ul>
+<li><code>hast</code> for HTML</li>
+<li><code>mdast</code> for Markdown</li>
+<li><code>xast</code>for XML</li>
+<li><code>sast</code> for CSS, SCSS, Less</li>
+</ul>
+</section><section id="ts-morph" class="slide level2">
+<h2>ts-morph</h2>
+<p><a href="https://ts-morph.com/">https://ts-morph.com/</a></p>
+<p>Most useful for transformations (codemods)</p>
+<p>NOT unist compatible</p>
+</section><section id="treesitter" class="slide level2">
+<h2>TreeSitter</h2>
+<blockquote>
+<p>Dependency-free so that the runtime library (which is written in pure C) can be embedded in any application</p>
+</blockquote>
+<p>Many supported languages</p>
+<p>WASM output available*</p>
+<p><a href="./assets/tree-sitter-small.png"></a></p>
+<aside class="notes">
+<p>WASM output does not have language parity with core (some just fail to build)</p>
+</aside>
+</section><section id="what-kind-of-environment-do-hobbits-live-in" class="slide level2">
+<h2>What kind of environment do hobbits live in?</h2>
+</section><section id="a-hobbitat." class="slide level2">
+<h2>A hobbitat.</h2>
+<p><img data-src="./assets/hobbits.gif" /></p>
+</section></section>
+<section><section id="the-problem" class="title-slide slide level1"><h1>The Problem</h1></section><section id="evaluation-of-env-variables" class="slide level2">
+<h2>Evaluation of ENV variables</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode typescript"><code class="sourceCode typescript"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">const</span> foo <span class="op">=</span> <span class="bu">process</span><span class="op">.</span><span class="at">env</span>.<span class="at">foo</span><span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="co">// or</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="kw">const</span> <span class="op">{</span> foo <span class="op">}</span> <span class="op">=</span> <span class="bu">process</span><span class="op">.</span><span class="at">env</span><span class="op">;</span></span></code></pre></div>
+</section><section id="runtime" class="slide level2">
+<h2>Runtime?</h2>
+<p>Functions only fail when they call a missing env var</p>
+</section><section id="compile-time-or-dev-time" class="slide level2">
+<h2>Compile-time or dev-time?</h2>
+<p><img data-src="./assets//crickets.gif" /></p>
+</section><section id="someone-once-asked-me-what-im-doing-for-the-environment." class="slide level2">
+<h2>Someone once asked me what I’m doing for the environment.</h2>
+</section><section id="a-lot.-even-the-bags-under-my-eyes-are-reusable." class="slide level2">
+<h2>A lot. Even the bags under my eyes are reusable.</h2>
+<p><img data-src="./assets/eyes.gif" /></p>
+</section></section>
+<section><section id="solutions" class="title-slide slide level1"><h1>Solutions</h1></section><section id="options" class="slide level2">
+<h2>Options</h2>
+<ul>
+<li>T3 Env <a href="https://env.t3.gg/">https://env.t3.gg/</a></li>
+<li>geller <a href="https://github.com/cmgriffing/geller">https://github.com/cmgriffing/geller</a></li>
+</ul>
+</section><section id="t3-env-implementation" class="slide level2">
+<h2>T3 Env (implementation)</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode typescript"><code class="sourceCode typescript"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">// src/env.mjs</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="im">import</span> <span class="op">{</span> createEnv <span class="op">}</span> <span class="im">from</span> <span class="st">&quot;@t3-oss/env-nextjs&quot;</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="im">import</span> <span class="op">{</span> z <span class="op">}</span> <span class="im">from</span> <span class="st">&quot;zod&quot;</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="im">export</span> <span class="kw">const</span> env <span class="op">=</span> <span class="fu">createEnv</span>(<span class="op">{</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>  server<span class="op">:</span> <span class="op">{</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>    DATABASE_URL<span class="op">:</span> <span class="va">z</span><span class="op">.</span><span class="fu">string</span>().<span class="fu">url</span>()<span class="op">,</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>    OPEN_AI_API_KEY<span class="op">:</span> <span class="va">z</span><span class="op">.</span><span class="fu">string</span>().<span class="fu">min</span>(<span class="dv">1</span>)<span class="op">,</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>  <span class="op">},</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>  client<span class="op">:</span> <span class="op">{</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY<span class="op">:</span> <span class="va">z</span><span class="op">.</span><span class="fu">string</span>().<span class="fu">min</span>(<span class="dv">1</span>)<span class="op">,</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>  <span class="op">},</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a>  runtimeEnv<span class="op">:</span> <span class="op">{</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>    DATABASE_URL<span class="op">:</span> <span class="bu">process</span><span class="op">.</span><span class="at">env</span>.<span class="at">DATABASE_URL</span><span class="op">,</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a>    OPEN_AI_API_KEY<span class="op">:</span> <span class="bu">process</span><span class="op">.</span><span class="at">env</span>.<span class="at">OPEN_AI_API_KEY</span><span class="op">,</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY<span class="op">:</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a>      <span class="bu">process</span><span class="op">.</span><span class="at">env</span>.<span class="at">NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY</span><span class="op">,</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a>  <span class="op">},</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="op">}</span>)<span class="op">;</span></span></code></pre></div>
+<aside class="notes">
+<p>Inspired by a pattern made famous by Matt Pocock</p>
+<p>Total TypeScript is great (especially if your company will foot the bill)</p>
+</aside>
+</section><section id="t3-env-usage" class="slide level2">
+<h2>T3 Env (usage)</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode typescript"><code class="sourceCode typescript"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">// src/app/hello/route.ts</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="im">import</span> <span class="op">{</span> env <span class="op">}</span> <span class="im">from</span> <span class="st">&quot;../env.mjs&quot;</span><span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="im">export</span> <span class="kw">const</span> GET <span class="op">=</span> (req<span class="op">:</span> Request) <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>  <span class="kw">const</span> DATABASE_URL <span class="op">=</span> <span class="va">env</span><span class="op">.</span><span class="at">DATABASE_URL</span><span class="op">;</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>  <span class="co">// use it...</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="op">};</span></span></code></pre></div>
+</section><section id="t3-env-thoughts" class="slide level2">
+<h2>T3 Env (thoughts)</h2>
+<ul>
+<li>awesome for new projects</li>
+<li>harder to enforce for old projects
+<ul>
+<li>nothing prevents a wild <code>process.env</code> (without an eslint rule)</li>
+</ul></li>
+</ul>
+</section><section id="geller-core" class="slide level2">
+<h2>geller (core)</h2>
+<ul>
+<li>(compile/build)-time</li>
+<li>uses typescript</li>
+<li>supports dotenv</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode typescript"><code class="sourceCode typescript"><span id="cb6-1"><a href="#cb6-1"></a>geller scan <span class="op">-</span><span class="va">g</span> <span class="op">./</span><span class="va">foo</span><span class="op">.</span><span class="at">ts</span></span></code></pre></div>
+</section><section id="geller-details-process-nodes" class="slide level2">
+<h2>geller details (process nodes)</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode typescript"><code class="sourceCode typescript"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">export</span> <span class="kw">function</span> <span class="fu">getUsedEnvVarsSync</span>(</span>
+<span id="cb7-2"><a href="#cb7-2"></a>  globs<span class="op">:</span> <span class="dt">string</span><span class="op">[],</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="op">{</span> envs<span class="op">,</span> <span class="op">}:</span> <span class="op">{</span> envs<span class="op">?:</span> <span class="dt">string</span><span class="op">[];</span> <span class="op">}</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>) <span class="op">{</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="kw">const</span> project <span class="op">=</span> <span class="kw">new</span> <span class="fu">Project</span>(<span class="op">{}</span>)<span class="op">;</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="va">project</span><span class="op">.</span><span class="fu">addSourceFilesAtPaths</span>(globs)<span class="op">;</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a></span>
+<span id="cb7-8"><a href="#cb7-8"></a>  <span class="kw">const</span> processEnvNodes<span class="op">:</span> Identifier<span class="op">[]</span> <span class="op">=</span> <span class="op">[];</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a></span>
+<span id="cb7-10"><a href="#cb7-10"></a>  <span class="va">project</span><span class="op">.</span><span class="fu">getSourceFiles</span>().<span class="fu">forEach</span>((sourceFile<span class="op">,</span> index) <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a>    <span class="kw">const</span> identifierNodes <span class="op">=</span> <span class="va">sourceFile</span><span class="op">.</span><span class="fu">getDescendantsOfKind</span>(</span>
+<span id="cb7-12"><a href="#cb7-12"></a>      <span class="va">SyntaxKind</span><span class="op">.</span><span class="at">Identifier</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a>    )<span class="op">;</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a></span>
+<span id="cb7-15"><a href="#cb7-15"></a>    <span class="co">//</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a>    <span class="kw">const</span> fileProcessNodes <span class="op">=</span> <span class="va">identifierNodes</span><span class="op">.</span><span class="fu">filter</span>(</span>
+<span id="cb7-17"><a href="#cb7-17"></a>      (identifier) <span class="kw">=&gt;</span> <span class="va">identifier</span><span class="op">.</span><span class="fu">getText</span>() <span class="op">===</span> <span class="st">&quot;process&quot;</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a>    )<span class="op">;</span></span>
+<span id="cb7-19"><a href="#cb7-19"></a></span>
+<span id="cb7-20"><a href="#cb7-20"></a>    <span class="fu">if</span> (<span class="va">fileProcessNodes</span><span class="op">.</span><span class="at">length</span>) <span class="op">{</span></span>
+<span id="cb7-21"><a href="#cb7-21"></a>      <span class="kw">const</span> fileProcessEnvNodes <span class="op">=</span> fileProcessNodes</span>
+<span id="cb7-22"><a href="#cb7-22"></a>        .<span class="fu">map</span>((processIdentifier) <span class="kw">=&gt;</span></span>
+<span id="cb7-23"><a href="#cb7-23"></a>          processIdentifier</span>
+<span id="cb7-24"><a href="#cb7-24"></a>            .<span class="fu">getNextSiblingIfKind</span>(<span class="va">SyntaxKind</span><span class="op">.</span><span class="at">DotToken</span>)</span>
+<span id="cb7-25"><a href="#cb7-25"></a>            <span class="op">?</span>.<span class="fu">getNextSiblingIfKind</span>(<span class="va">SyntaxKind</span><span class="op">.</span><span class="at">Identifier</span>)</span>
+<span id="cb7-26"><a href="#cb7-26"></a>        )</span>
+<span id="cb7-27"><a href="#cb7-27"></a>        .<span class="fu">filter</span>((envIdentifier) <span class="kw">=&gt;</span> <span class="kw">typeof</span> envIdentifier <span class="op">!==</span> <span class="st">&quot;undefined&quot;</span>)</span>
+<span id="cb7-28"><a href="#cb7-28"></a>        .<span class="fu">filter</span>(</span>
+<span id="cb7-29"><a href="#cb7-29"></a>          (envIdentifier) <span class="kw">=&gt;</span> <span class="va">envIdentifier</span><span class="op">?.</span><span class="fu">getText</span>() <span class="op">===</span> <span class="st">&quot;env&quot;</span></span>
+<span id="cb7-30"><a href="#cb7-30"></a>        ) <span class="im">as</span> Identifier<span class="op">[];</span></span>
+<span id="cb7-31"><a href="#cb7-31"></a></span>
+<span id="cb7-32"><a href="#cb7-32"></a>      <span class="fu">if</span> (<span class="va">fileProcessEnvNodes</span><span class="op">.</span><span class="at">length</span>) <span class="op">{</span></span>
+<span id="cb7-33"><a href="#cb7-33"></a>        <span class="va">processEnvNodes</span><span class="op">.</span><span class="fu">push</span>(<span class="op">...</span>fileProcessEnvNodes)<span class="op">;</span></span>
+<span id="cb7-34"><a href="#cb7-34"></a>      <span class="op">}</span></span>
+<span id="cb7-35"><a href="#cb7-35"></a>    <span class="op">}</span></span>
+<span id="cb7-36"><a href="#cb7-36"></a></span>
+<span id="cb7-37"><a href="#cb7-37"></a>    <span class="co">//...</span></span></code></pre></div>
+</section><section id="geller-details-process-nodes-1" class="slide level2">
+<h2>geller details (process nodes)</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode typescript"><code class="sourceCode typescript"><span id="cb8-1"><a href="#cb8-1"></a><span class="va">processEnvNodes</span><span class="op">.</span><span class="fu">forEach</span>((envNode) <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="kw">const</span> varNode <span class="op">=</span> envNode</span>
+<span id="cb8-3"><a href="#cb8-3"></a>    .<span class="fu">getParent</span>()</span>
+<span id="cb8-4"><a href="#cb8-4"></a>    .<span class="fu">getNextSiblingIfKind</span>(<span class="va">SyntaxKind</span><span class="op">.</span><span class="at">DotToken</span>)</span>
+<span id="cb8-5"><a href="#cb8-5"></a>    <span class="op">?</span>.<span class="fu">getNextSiblingIfKind</span>(<span class="va">SyntaxKind</span><span class="op">.</span><span class="at">Identifier</span>)<span class="op">;</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a></span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="fu">if</span> (varNode) <span class="op">{</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>    <span class="co">// basic: process.env.FOO</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>    <span class="va">basicEnvVars</span><span class="op">.</span><span class="fu">push</span>(<span class="va">varNode</span><span class="op">.</span><span class="fu">getText</span>())<span class="op">;</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>  <span class="op">}</span> <span class="cf">else</span> <span class="fu">if</span> (</span>
+<span id="cb8-11"><a href="#cb8-11"></a>    <span class="va">envNode</span><span class="op">?.</span><span class="fu">getParent</span>()<span class="op">?</span>.<span class="fu">getParent</span>()<span class="op">?</span>.<span class="fu">isKind</span>(<span class="va">SyntaxKind</span><span class="op">.</span><span class="at">VariableDeclaration</span>)</span>
+<span id="cb8-12"><a href="#cb8-12"></a>  ) <span class="op">{</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>    <span class="co">// destructured: const { FOO } = process.env</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a>    <span class="kw">const</span> syntaxList <span class="op">=</span> envNode</span>
+<span id="cb8-15"><a href="#cb8-15"></a>      .<span class="fu">getParent</span>()</span>
+<span id="cb8-16"><a href="#cb8-16"></a>      <span class="op">?</span>.<span class="fu">getParent</span>()</span>
+<span id="cb8-17"><a href="#cb8-17"></a>      <span class="op">?</span>.<span class="fu">getFirstDescendantByKind</span>(<span class="va">SyntaxKind</span><span class="op">.</span><span class="at">SyntaxList</span>)<span class="op">;</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a></span>
+<span id="cb8-19"><a href="#cb8-19"></a>    <span class="kw">const</span> identifiers <span class="op">=</span> syntaxList</span>
+<span id="cb8-20"><a href="#cb8-20"></a>      <span class="op">?</span>.<span class="fu">getDescendantsOfKind</span>(<span class="va">SyntaxKind</span><span class="op">.</span><span class="at">Identifier</span>)</span>
+<span id="cb8-21"><a href="#cb8-21"></a>      .<span class="fu">map</span>((identifier) <span class="kw">=&gt;</span> <span class="va">identifier</span><span class="op">.</span><span class="fu">getText</span>())</span>
+<span id="cb8-22"><a href="#cb8-22"></a>      .<span class="fu">filter</span>((identifier) <span class="kw">=&gt;</span> <span class="op">!!</span>identifier) <span class="im">as</span> string<span class="op">[];</span></span>
+<span id="cb8-23"><a href="#cb8-23"></a></span>
+<span id="cb8-24"><a href="#cb8-24"></a>    <span class="fu">if</span> (<span class="va">identifiers</span><span class="op">.</span><span class="at">length</span>) <span class="op">{</span></span>
+<span id="cb8-25"><a href="#cb8-25"></a>      <span class="va">destructuredEnvVars</span><span class="op">.</span><span class="fu">push</span>(<span class="op">...</span>identifiers)<span class="op">;</span></span>
+<span id="cb8-26"><a href="#cb8-26"></a>    <span class="op">}</span></span>
+<span id="cb8-27"><a href="#cb8-27"></a>  <span class="op">}</span></span>
+<span id="cb8-28"><a href="#cb8-28"></a></span>
+<span id="cb8-29"><a href="#cb8-29"></a>  <span class="co">// ...</span></span></code></pre></div>
+</section><section id="which-musical-instrument-is-eco-friendly-and-yet-contains-co2" class="slide level2">
+<h2>Which musical instrument is eco-friendly and yet contains CO2?</h2>
+</section><section id="an-air-guitar." class="slide level2">
+<h2>An air guitar.</h2>
+<p><img data-src="./assets/air-guitar2.gif" /></p>
+</section></section>
+<section><section id="more" class="title-slide slide level1"><h1>More?</h1></section><section id="eslint" class="slide level2">
+<h2>ESLint?</h2>
+<ul>
+<li>different AST structures
+<ul>
+<li>no more unist</li>
+<li>no more typescript native</li>
+</ul></li>
+<li>selectors instead</li>
+</ul>
+</section><section id="selectors" class="slide level2">
+<h2>Selectors</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode typescript"><code class="sourceCode typescript"><span id="cb9-1"><a href="#cb9-1"></a><span class="im">export</span> <span class="kw">const</span> geller<span class="op">:</span> <span class="dt">any</span> <span class="op">=</span> <span class="fu">createRule</span>(<span class="op">{</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">create</span>(context) <span class="op">{</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>    <span class="kw">const</span> <span class="op">{</span> envs<span class="op">,</span> cwd <span class="op">}</span> <span class="op">=</span> <span class="va">context</span><span class="op">.</span><span class="va">options</span><span class="op">?.[</span><span class="dv">0</span><span class="op">]</span> <span class="op">||</span> <span class="op">{};</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a>    <span class="kw">const</span> dotEnvVars <span class="op">=</span> <span class="fu">getDotEnvVarsSync</span>(envs<span class="op">,</span> cwd)<span class="op">;</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a></span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="cf">return</span> <span class="op">{</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>      <span class="fu">MemberExpression</span>(node) <span class="op">{</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a>        <span class="kw">const</span> nodeAny <span class="op">=</span> node <span class="im">as</span> any<span class="op">;</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a></span>
+<span id="cb9-10"><a href="#cb9-10"></a>        <span class="fu">if</span> (</span>
+<span id="cb9-11"><a href="#cb9-11"></a>          <span class="va">nodeAny</span><span class="op">?.</span><span class="va">object</span><span class="op">?.</span><span class="at">name</span> <span class="op">===</span> <span class="st">&quot;process&quot;</span> <span class="op">&amp;&amp;</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a>          <span class="va">nodeAny</span><span class="op">.</span><span class="va">property</span><span class="op">.</span><span class="at">name</span> <span class="op">===</span> <span class="st">&quot;env&quot;</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a>        ) <span class="op">{</span></span>
+<span id="cb9-14"><a href="#cb9-14"></a>          <span class="kw">const</span> property <span class="op">=</span> (<span class="va">node</span><span class="op">.</span><span class="at">parent</span> <span class="im">as</span> any)<span class="op">?</span>.<span class="at">property</span><span class="op">;</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a>          <span class="kw">const</span> member <span class="op">=</span> <span class="va">property</span><span class="op">?.</span><span class="at">name</span><span class="op">;</span></span></code></pre></div>
+</section><section id="example-1" class="slide level2">
+<h2>Example</h2>
+<p><img data-src="./assets/eslint-example.png" /></p>
+</section><section id="what-is-the-most-environmentally-friendly-video-game" class="slide level2">
+<h2>What is the most environmentally friendly video game?</h2>
+</section><section id="call-of-duty.-it-gets-recycled-every-year" class="slide level2">
+<h2>Call of Duty. It gets recycled every year!</h2>
+<p><img data-src="./assets/laughing-soldier.gif" /></p>
+</section><section id="citations" class="slide level2">
+<h2>Citations</h2>
+<ul>
+<li>Something: url to citation</li>
+</ul>
+<script>
+/* Global Styles go here */
+
+
+
+</script>
+<style>
+pre, code {
+  background: white;
+}
+</style>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
